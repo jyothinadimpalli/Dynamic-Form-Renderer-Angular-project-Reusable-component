@@ -52,39 +52,5 @@ export class DynamicFormComponent implements OnChanges {
   }
 
 
-  fillSampleData() {
-    
-  // if (!this.userForm || !this.formSetup) return;
-
-  // const sample: any = {};
-  // this.formSetup.fields.forEach((f: any) => {
-  //   if (f.sample !== undefined) {
-  //     sample[f.name] = f.sample;
-  //   } else {
-  //     switch(f.type) {
-  //       case 'text':
-  //       case 'textarea':
-  //         sample[f.name] = '';
-  //         break;
-  //       case 'date':
-  //         sample[f.name] = '';
-  //         break;
-  //       case 'dropdown':
-  //         sample[f.name] = f.options?.[0] || '';
-  //         break;
-  //       case 'multiselect':
-  //         sample[f.name] = [];
-  //         break;
-  //       case 'checkbox':
-  //         sample[f.name] = false;
-  //         break;
-  //       default:
-  //         sample[f.name] = '';
-  //     }
-  //   }
-  // });
-
-  // this.userForm.setValue(sample);
-}
 
 }
