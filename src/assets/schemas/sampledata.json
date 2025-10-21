@@ -1,0 +1,56 @@
+{
+  "title": "User Registration",
+  "fields": [
+    {
+      "label": "Full Name",
+      "name": "fullName",
+      "type": "text",
+      "required": true,
+      "sample": "Jyothi Ramana Kumari Nadimpalli"
+    },
+    {
+      "label": "Email",
+      "name": "email",
+      "type": "text",
+      "required": true,
+      "validation": {
+        "pattern": "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",
+        "message": "Invalid email address"
+      },
+      "sample": "john.doe@example.com"
+    },
+    {
+      "label": "Date of Birth",
+      "name": "dob",
+      "type": "date",
+      "sample": "1990-01-01"
+    },
+    {
+      "label": "Gender",
+      "name": "gender",
+      "type": "dropdown",
+      "options": ["Male", "Female", "Other"],
+      "required": true,
+      "sample": "Male"
+    },
+    {
+      "label": "Hobbies",
+      "name": "hobbies",
+      "type": "multiselect",
+      "options": ["Reading", "Sports", "Music", "Travel"],
+      "sample": ["Reading", "Music"]
+    },
+    {
+      "label": "Subscribe to newsletter",
+      "name": "subscribe",
+      "type": "checkbox",
+      "sample": true
+    },
+    {
+      "label": "About Yourself",
+      "name": "about",
+      "type": "textarea",
+      "sample": "I am a software developer."
+    }
+  ]
+}

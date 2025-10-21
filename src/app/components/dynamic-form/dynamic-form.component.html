@@ -1,0 +1,36 @@
+<div class="dynamic-form" *ngIf="userForm">
+  <h3 *ngIf="formTitle">{{ formTitle }}</h3>
+
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+
+    <div *ngFor="let f of formSetup.fields" class="form-row">
+
+      <label *ngIf="f.type !== 'checkbox'" [attr.for]="f.name">{{ f.label }}</label>
+
+      <input *ngIf="f.type === 'text'" [formControlName]="f.name" [attr.placeholder]="f.label" />
+
+      <textarea *ngIf="f.type === 'textarea'" [formControlName]="f.name" [attr.placeholder]="f.label"></textarea>
+     
+      <input *ngIf="f.type === 'date'" type="date" [formControlName]="f.name" />
+      <select *ngIf="f.type === 'dropdown'" [formControlName]="f.name">
+        <option value="">Select...</option>
+        <option *ngFor="let opt of f.options" [value]="opt">{{ opt }}
+
+        </option>
+      </select>
+
+      <select *ngIf="f.type === 'multiselect'" [formControlName]="f.name" multiple>
+        <option *ngFor="let opt of f.options" [value]="opt">{{ opt }}</option>
+      </select>
+      <div *ngIf="f.type === 'checkbox'">
+        <input type="checkbox" [formControlName]="f.name" /> {{ f.label }}
+      </div>
+
+      <small class="error" *ngIf="getErrorMsg(f)">{{ getErrorMsg(f) }}</small>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+  <!-- <button type="button" (click)="fillSampleData()">Fill Sample Data</button> -->
+
+</div>
