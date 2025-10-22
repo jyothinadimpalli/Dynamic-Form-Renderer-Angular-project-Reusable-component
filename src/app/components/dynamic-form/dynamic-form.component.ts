@@ -23,7 +23,9 @@ export class DynamicFormComponent implements OnChanges {
 
   private prepareForm(fields: any[]): void {
     const group: any = {};
+    
     fields.forEach(f => {
+      //adding validator using rules variable
       const rules = [];
       if (f.required) rules.push(Validators.required);
       if (f.validation?.pattern) {

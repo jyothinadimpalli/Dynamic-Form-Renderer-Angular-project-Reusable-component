@@ -12,10 +12,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get('assets/schemas/user-registration.json').subscribe({
-      next: (res) => this.formSchema = res,
-      error: (err) => console.error('Error loading schema', err)
-    });
+    this.http.get('assets/schemas/user-registration.json').subscribe((res)=>{this.formSchema=res}, (err) => console.error('Error loading schema', err));
   }
 
   handleFormSubmit(values: any) {
